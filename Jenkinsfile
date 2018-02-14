@@ -2,8 +2,8 @@
     agent any
 
     parameters {
-         string(name: 'tomcat_dev', defaultValue: '18.216.71.226', description: 'Staging Server')
-         string(name: 'tomcat_prod', defaultValue: '18.220.195.109', description: 'Production Server')
+         string(name: 'tomcat_dev', defaultValue: '18.217.209.13', description: 'Staging Server')
+         string(name: 'tomcat_prod', defaultValue: '52.14.40.179', description: 'Production Server')
     }
 
     triggers {
@@ -27,13 +27,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "scp -i /home/jenkins/id_rsa **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
+                        sh "scp -i /Users/msalam/.ssh/id_rsa **/target/*.war ec2-user@${params.tomcat_dev}:/var/lib/tomcat7/webapps"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "scp -i /home/jenkins/id_rsa **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
+                        sh "scp -i /Users/msalam/.ssh/id_rsa **/target/*.war ec2-user@${params.tomcat_prod}:/var/lib/tomcat7/webapps"
                     }
                 }
             }
