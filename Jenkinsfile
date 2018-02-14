@@ -2,8 +2,8 @@
     agent any
 
     parameters {
-         string(name: 'tomcat_dev', defaultValue: '18.217.209.13', description: 'Staging Server')
-         string(name: 'tomcat_prod', defaultValue: '52.14.40.179', description: 'Production Server')
+         string(name: 'tomcat_dev', defaultValue: '18.217.125.2', description: 'Staging Server')
+         string(name: 'tomcat_prod', defaultValue: '18.219.94.229', description: 'Production Server')
     }
 
     triggers {
